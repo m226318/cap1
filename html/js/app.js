@@ -338,6 +338,12 @@ xml.send(data);
    //send data sql
 	
     modal.classList.remove("show","show1");
+	if(correct){
+		window.alert("Correct!");
+	}
+	else{
+		window.alert("incorrect!");}
+	
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
  // totally new page dnu window.location.replace("../game.php");

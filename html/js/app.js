@@ -352,7 +352,9 @@ xml.send(data);
     startGame();
 }
 document.getElementById('score').innerHTML = score+secondscore;
-
+ var ele = document.getElementsByName("fav_language");
+   for(var i=0;i<ele.length;i++)
+      ele[i].checked = false;
 // loop to add event listeners to each card
 for (var i = 0; i < cards.length; i++){
     card = cards[i];

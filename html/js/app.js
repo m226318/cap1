@@ -260,7 +260,7 @@ function congratulations(){
         finalTime = timer.innerHTML;
         // show congratulations modal
         modal.classList.add("show");
-       // document.getElementById("totalTime").innerHTML = finalTime;
+        document.getElementById("totalTime").innerHTML = finalTime;
 
         //closeicon on modal
         closeModal();
@@ -313,7 +313,6 @@ document.body.onkeyup = function(e){
 // @desciption for user to play Again
 function playAgain(){
  roundnum=roundnum+1;
-	        modal.classList.remove("show","show1");
 
   //fix id with set far from consent
 var xml = new XMLHttpRequest();
@@ -338,7 +337,7 @@ xml.send(data);
 
    //send data sql
 	
-   
+    modal.classList.remove("show","show1");
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
  // totally new page dnu window.location.replace("../game.php");

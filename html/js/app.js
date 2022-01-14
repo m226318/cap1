@@ -69,7 +69,9 @@ console.log(document.getElementById('n'));
  console.log(Date());
 document.body.onload = startGame();
 
-
+function setfinal(){
+document.getElementById("sc").innerHTML="Score is: "+(score+secondscore);	
+}
 // @description function to start a new 
 
 function startGame(){

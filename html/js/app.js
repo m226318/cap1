@@ -260,7 +260,7 @@ function congratulations(){
         finalTime = timer.innerHTML;
         // show congratulations modal
         modal.classList.add("show");
-        document.getElementById("totalTime").innerHTML = finalTime;
+       // document.getElementById("totalTime").innerHTML = finalTime;
 
         //closeicon on modal
         closeModal();

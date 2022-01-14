@@ -197,7 +197,7 @@ function enable(){
 var second = 20, minute = 0;
 var timer = document.querySelector(".timer");
 var timerover = document.querySelector(".overall");
-var secondover=0, minuteover=2;
+var secondover=0, minuteover=3;
 var interval;
 function startTimer(){
     interval = setInterval(function(){

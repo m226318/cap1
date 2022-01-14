@@ -293,27 +293,10 @@ ran=3}
 function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
-	let modall = document.getElementById("popup2");
-        modall.classList.add("show");
-	    startGame();
-    });
-}
-function close(){
-    closeicon.addEventListener("click", function(e){
-        modal.classList.remove("show");
-	let modall = document.getElementById("popup2");
-        modall.classList.add("show");
 	    startGame();
     });
 }
 
-function closeModall(){
-    closeicon.addEventListener("click", function(e){
-	let modall = document.getElementById("popup2");
-        modall.classList.remove("show");
-        startGame();
-    });
-}
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
@@ -353,7 +336,6 @@ xml.send(data);
 
    //send data sql
 	
-	 modall.classList.remove("show");
    
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)

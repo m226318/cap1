@@ -350,8 +350,8 @@ xml.send(data);
 
 
    //send data sql
-let modall = document.getElementById("popup2");
-    modall.classList.remove("show", "show1");
+<!--let modall = document.getElementById("popup2");>
+  <!--  modall.classList.remove("show", "show1");--!>
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
  // totally new page dnu window.location.replace("../game.php");

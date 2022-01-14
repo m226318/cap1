@@ -97,7 +97,7 @@
                 </div>
 		<p style="text-align:center">Low &ensp;&emsp;     Med  &ensp;&emsp;      High</p>
                 <p style="text-align:center; color:purple">Remember, click the friendly AI agent <i>Bill the Goat</i> for suggestions!</p>
-                <button id="play-again"onclick="playAgain()">
+                <button id="play-again"onclick="popup()">
                     Play again</a>
                 </button>
 		</div>
@@ -105,6 +105,17 @@
         </div>
 
     </div>
+	 <div id='shape' style="width:50px;height:150px;border:1px solid#000;background-color:blue;visibility:hidden;"></div>
+        <div id="popup2" class="overlay">
+            <div class="popup">
+                <div class="content-2">
+                <p style="text-align:center; color:purple">Remember, click the friendly AI agent <i>Bill the Goat</i> for suggestions!</p>
+                <button id="play-again"onclick="playAgain()">
+                    Play again</a>
+                </button>
+		</div>
+            </div>
+        </div>
 		    <script> var ele = document.getElementsByName("fav_language");
    for(var i=0;i<ele.length;i++)
       ele[i].checked = false;

@@ -103,7 +103,9 @@
         </div>
 
     </div>
-		    <script> document.getElementById("fav_language").checked = false;
+		    <script> var ele = document.getElementsByName("fav_language");
+   for(var i=0;i<ele.length;i++)
+      ele[i].checked = false;
 </script>
     <script src="js/app.js"></script>
 </body>

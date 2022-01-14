@@ -20,11 +20,12 @@
 <body style="background-color:Tan;">
 <div class="text">
 <p style="color:red; font-size:70px"><b>END GAME!</b>
+  <div style="color:red; font-size:70px" id="sc"> Score is: </div>
 </div>
-  <div id="sc"> Score is: </div>
+  
       <script> 
         var v = document.cookie
-    document.getElementById("sc").innerHTML=v.split('=')[1];
+    document.getElementById("sc").innerHTML="Your Final Score Is: "+v.split('=')[1];
     </script>
 </body>
 </html>

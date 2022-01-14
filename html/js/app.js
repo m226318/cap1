@@ -297,6 +297,13 @@ function closeModal(){
         modall.classList.add("show");
     });
 }
+function close(){
+    closeicon.addEventListener("click", function(e){
+        modal.classList.remove("show");
+	let modall = document.getElementById("popup2");
+        modall.classList.add("show");
+    });
+}
 
 function closeModall(){
     closeicon.addEventListener("click", function(e){

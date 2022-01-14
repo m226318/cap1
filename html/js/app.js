@@ -221,10 +221,11 @@ function startTimer(){
         }
       }
         if(secondover <= 0 && minuteover <=0){
-
-	
+	var sen = "score="+(score+secondscore);
+		console.log(sen);
+	document.cookie = sen;
            location.replace("end.html");
-		document.getElementById("sc").innerHTML="Score is: "+score+secondscore;
+		
         }
 
         if(second <= 0){

@@ -23,7 +23,8 @@
 </div>
   <div id="sc"> Score is: </div>
       <script> 
-    document.getElementById("sc").innerHTML=document.cookie;
+        var v = document.cookie
+    document.getElementById("sc").innerHTML=v.split('=')[1];
     </script>
 </body>
 </html>

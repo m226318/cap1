@@ -23,11 +23,19 @@
         <input type="submit" value="Next" onclick="myalert()"/>
      </form>
 
-     <script>
-    function myalert() {
-        alert("You are about to start the game");
-    }
-</script>
+<div id='shape' style="width:50px;height:150px;border:1px solid#000;background-color:blue;visibility:hidden;"></div>
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <div class="content-2">
+                  <p> You are about to start the game! </p>
+                </div>
+                <p style="text-align:center; color:purple">Remember, click the friendly AI agent <i>Bill the Goat</i> for suggestions!</p>
+                <button id="play-again"> Start!
+               
+                </button>
+            </div>
+        </div>
+
 </div>
 </body>
 </html>

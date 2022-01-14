@@ -220,8 +220,9 @@ function startTimer(){
       }
         if(secondover <= 0 && minuteover <=0){
 
-
+	document.getElementById("sc").innerHTML="Score is: "+score+secondscore;
            location.replace("end.html");
+		document.getElementById("sc").innerHTML="Score is: "+score+secondscore;
         }
 
         if(second <= 0){

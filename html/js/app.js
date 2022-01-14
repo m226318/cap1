@@ -267,6 +267,7 @@ function congratulations(){
     };
 }
 
+
 function showAI(){
  clickedaibox=true;
   score-=200
@@ -292,6 +293,15 @@ ran=3}
 function closeModal(){
     closeicon.addEventListener("click", function(e){
         modal.classList.remove("show");
+	let modall = document.getElementById("popup2");
+        modall.classList.add("show");
+    });
+}
+
+function closeModall(){
+    closeicon.addEventListener("click", function(e){
+	let modall = document.getElementById("popup2");
+        modall.classList.remove("show");
         startGame();
     });
 }
@@ -333,7 +343,8 @@ xml.send(data);
 
 
    //send data sql
-    modal.classList.remove("show", "show1");
+let modall = document.getElementById("popup2");
+    modall.classList.remove("show", "show1");
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
  // totally new page dnu window.location.replace("../game.php");

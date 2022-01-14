@@ -6,10 +6,8 @@
     <meta name="description" content="">
     <title>End game</title>
 
-    <script> let va = document.cookie; 
-      console.log(va);
-      console.log(document.cookie);
-    document.getElementById("sc").innerHTML=va;
+    <script> 
+    document.getElementById("sc").innerHTML=document.cookie;
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style >
@@ -25,6 +23,6 @@
 <div class="text">
 <p style="color:red; font-size:70px"><b>END GAME!</b>
 </div>
-  <p id="sc"> Score is: </p>
+  <div id="sc"> Score is: </div>
 </body>
 </html>

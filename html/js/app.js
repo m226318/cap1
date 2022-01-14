@@ -292,8 +292,8 @@ ran=3}
 // @description close icon on modal
 function closeModal(){
     closeicon.addEventListener("click", function(e){
-        modal.classList.remove("show");
-	    startGame();
+        modal.classList.remove("show","show1");
+	startGame();
     });
 }
 
@@ -313,6 +313,8 @@ document.body.onkeyup = function(e){
 // @desciption for user to play Again
 function playAgain(){
  roundnum=roundnum+1;
+	        modal.classList.remove("show","show1");
+
   //fix id with set far from consent
 var xml = new XMLHttpRequest();
 xml.onreadystatechange = function() {

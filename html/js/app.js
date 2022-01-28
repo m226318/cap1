@@ -69,7 +69,9 @@ console.log(document.getElementById('n'));
  console.log(Date());
 document.body.onload = startGame();
 
-
+function setfinal(){
+document.getElementById("sc").innerHTML="Score is: "+(score+secondscore);	
+}
 // @description function to start a new 
 
 function startGame(){
@@ -195,7 +197,7 @@ function enable(){
 var second = 20, minute = 0;
 var timer = document.querySelector(".timer");
 var timerover = document.querySelector(".overall");
-var secondover=0, minuteover=2;
+var secondover=0, minuteover=3;
 var interval;
 function startTimer(){
     interval = setInterval(function(){
@@ -219,9 +221,11 @@ function startTimer(){
         }
       }
         if(secondover <= 0 && minuteover <=0){
-
-
+	var sen = "score="+(score+secondscore);
+		console.log(sen);
+	document.cookie = sen;
            location.replace("end.html");
+		
         }
 
         if(second <= 0){
@@ -259,6 +263,9 @@ function congratulations(){
         clearInterval(interval);
         finalTime = timer.innerHTML;
         // show congratulations modal
+	     var ele = document.getElementsByName("fav_language");
+   for(var i=0;i<ele.length;i++)
+      ele[i].checked = false;
         modal.classList.add("show");
         document.getElementById("totalTime").innerHTML = finalTime;
 
@@ -266,6 +273,7 @@ function congratulations(){
         closeModal();
     };
 }
+
 
 function showAI(){
  clickedaibox=true;
@@ -291,10 +299,11 @@ ran=3}
 // @description close icon on modal
 function closeModal(){
     closeicon.addEventListener("click", function(e){
-        modal.classList.remove("show");
-        startGame();
+        modal.classList.remove("show","show1");
+	startGame();
     });
 }
+
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
@@ -311,6 +320,7 @@ document.body.onkeyup = function(e){
 // @desciption for user to play Again
 function playAgain(){
  roundnum=roundnum+1;
+
   //fix id with set far from consent
 var xml = new XMLHttpRequest();
 xml.onreadystatechange = function() {
@@ -333,7 +343,14 @@ xml.send(data);
 
 
    //send data sql
-    modal.classList.remove("show", "show1");
+	
+    modal.classList.remove("show","show1");
+	if(correct){
+		window.alert("Correct!");
+	}
+	else{
+		window.alert("incorrect!");}
+	
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
  // totally new page dnu window.location.replace("../game.php");

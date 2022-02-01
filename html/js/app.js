@@ -70,9 +70,9 @@ console.log(document.getElementById('n'));
 document.body.onload = startGame();
 
 function setfinal(){
-document.getElementById("sc").innerHTML="Score is: "+(score+secondscore);	
+document.getElementById("sc").innerHTML="Score is: "+(score+secondscore);
 }
-// @description function to start a new 
+// @description function to start a new
 
 function startGame(){
   boxflag = false;
@@ -133,7 +133,7 @@ function cardOpen() {
     if(len === 1){
      aiboxclicked=checkinai(openedCards[0].type);
         if(openedCards[0].type === rightcard.type){
-          
+
             matched();
 
         } else {
@@ -166,7 +166,7 @@ function unmatched(){
   openedCards[0].classList.remove("show", "open", "no-event");
 //  openedCards[1].classList.remove("show", "open", "no-event");
   openedCards = [];
-  
+
   document.getElementById('score').innerHTML=score+secondscore;
   console.log('wrong')
 }
@@ -211,11 +211,13 @@ function startTimer(){
           playAgain();
         }
         if(second<20 && second >10){
+          document.getElementById("AII").style.visibility = "visible";
         for (var i = 0; i < cards.length; i++){
             cards[i].classList.add("show", "open", "match", "disabled");
         }
       }
       else {
+        document.getElementById("AII").style.visibility = "hidden";
         for (var i = 0; i < cards.length; i++){
             cards[i].classList.remove("show", "open", "match", "disabled");
         }
@@ -225,7 +227,7 @@ function startTimer(){
 		console.log(sen);
 	document.cookie = sen;
            location.replace("end.html");
-		
+
         }
 
         if(second <= 0){
@@ -239,16 +241,17 @@ function startTimer(){
           document.getElementById("answer").style.visibility = "visible";
 
         }
-        if ( second <= 20-randbox && !boxflag){
+        if ( (second%2)==0){
           boxflag=true;
+          document.getElementById("shape").style.backgroundColor="blue"
           document.getElementById("shape").style.visibility = "visible";
         }
-	if(second <= 20-randbox-2 && boxflag){
+	if((second%2)!=0 ){
 	  boxflag=false;
-		document.getElementById("shape").style.visibility="hidden";}
+    document.getElementById("shape").style.backgroundColor="gold"
+		document.getElementById("shape").style.visibility="visible";}
         if(second > 10){
           document.getElementById("answer").style.visibility = "hidden";
-          document.getElementById("shape").style.visibility = "hidden";
         }
     },1000);
 }
@@ -278,17 +281,20 @@ function congratulations(){
 function showAI(){
  clickedaibox=true;
   score-=200
+  // might be a problem
+
   ran=Math.floor(Math.random()*10)+1
-if(ran>3){
-ran=3}
+if(ran>5){
+ran=5}
   console.log('AI_used')
   console.log('time left toselect AI=',second);
   x=0;
   if(bo===0){
-  for (var i = 0; i < cards.length; i++){//diamond here??? whut
-    if(cards[i].type===rightcard.type  || i==ran){
-      cards[i].classList.add("show1", "open", "match", "disabled");
-     airec.push(cards[i].type);
+  for (var i = 0; i < ran; i++){//diamond here??? whut
+    rand=Math.floor(Math.random()*10)+1;
+    if( !(cards[rand].type===rightcard.type)){
+      cards[rand].classList.add("show1", "open", "match", "disabled");
+     airec.push(cards[rand].type);
       x+=1
     }
   }}
@@ -308,12 +314,19 @@ function closeModal(){
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
       console.log("it ");
-        if(document.getElementById("shape").style.visibility == "visible"){
+        if(document.getElementById("shape").style.visibility == "visible" && document.getElementById("shape").style.backgroundColor=="blue"){
           console.log("it works");
           document.getElementById("shape").style.visibility = "hidden";
           secondscore+=50;
           console.log(secondscore);
         }
+
+          if(document.getElementById("shape").style.visibility == "visible" && document.getElementById("shape").style.backgroundColor=="gold"){
+            console.log("it works");
+            document.getElementById("shape").style.visibility = "hidden";
+            secondscore-=50;
+            console.log(secondscore);
+          }
     }
 }
 
@@ -334,8 +347,8 @@ xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 var conf = document.querySelector('input[name="fav_language"]:checked').value ;
  var timo = minute +" : "+ second ;
  var timeto = minuteover + " : "+secondover ;
- 
- 
+
+
  var data= 'roundnum= '+roundnum+'&roundtime='+timo+'&timeleft='+timeto+'&clickedaibox='+clickedaibox+'&aiboxnum='+numaiboxes+'&correct='+correct+'&score='+score+'&bonusscore=' +secondscore+'&aiused= '+aiboxclicked+'&confidence='+conf;
 xml.send(data);
 
@@ -343,14 +356,14 @@ xml.send(data);
 
 
    //send data sql
-	
+
     modal.classList.remove("show","show1");
 	if(correct){
 		window.alert("Correct!");
 	}
 	else{
 		window.alert("incorrect!");}
-	
+
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
  // totally new page dnu window.location.replace("../game.php");

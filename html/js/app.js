@@ -241,17 +241,26 @@ function startTimer(){
           document.getElementById("answer").style.visibility = "visible";
 
         }
+	    if ( second <= 20-randbox && !boxflag){
+		    boxflag=true;
         if ( (second%2)==0){
-          boxflag=true;
-          document.getElementById("shape").style.backgroundColor="blue"
+          
+          document.getElementById("shape").style.backgroundColor="blue";
           document.getElementById("shape").style.visibility = "visible";
         }
 	if((second%2)!=0 ){
-	  boxflag=false;
-    document.getElementById("shape").style.backgroundColor="gold"
-		document.getElementById("shape").style.visibility="visible";}
+    document.getElementById("shape").style.backgroundColor="gold";
+		document.getElementById("shape").style.visibility="visible";
+	}
+	    }
+	    
+	    if(second <= 20-randbox-2 && boxflag){
+		    boxflag=false;
+		document.getElementById("shape").style.visibility="hidden";}
+      
         if(second > 10){
           document.getElementById("answer").style.visibility = "hidden";
+		document.getElementById("shape").style.visibility = "hidden";
         }
     },1000);
 }

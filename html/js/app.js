@@ -276,9 +276,9 @@ function congratulations(){
         clearInterval(interval);
         finalTime = timer.innerHTML;
         // show congratulations modal
-	     //var ele = document.getElementsByName("fav_language");
-  // for(var i=0;i<ele.length;i++)
-   //   ele[i].checked = false;
+	     var ele = document.getElementsByName("fav_language");
+   for(var i=0;i<ele.length;i++)
+      ele[i].checked = false;
         modal.classList.add("show");
         document.getElementById("totalTime").innerHTML = finalTime;
 

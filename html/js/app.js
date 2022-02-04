@@ -289,6 +289,7 @@ function congratulations(){
 
 
 function showAI(){
+if(clickedaibox==false){
  clickedaibox=true;
   score-=200
   // might be a problem
@@ -300,17 +301,20 @@ ran=5}
   console.log('time left toselect AI=',second);
   x=0;
   if(bo===0){
-  for (var i = 0; i < ran; i++){//diamond here??? whut
+while(x<0){
+  for (var i = 0; i < ran; i++){
     rand=Math.floor(Math.random()*10)+1;
-    if( !(cards[rand].type===rightcard.type)){
+    if( !(cards[rand].type===rightcard.type) && (x<4){
       cards[rand].classList.add("show1", "open", "match", "disabled");
      airec.push(cards[rand].type);
       x+=1
     }
   }}
+}
   console.log('number boxes AI=', x);
  numaiboxes=x;
   bo=1;
+}
 };
 // @description close icon on modal
 function closeModal(){

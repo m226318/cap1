@@ -104,12 +104,12 @@ function startGame(){
 
 
     //reset timer
-    second = 15;
+    second = 18;
     minute = 0;
     hour = 0;
     document.getElementById("answer").style.visibility = "hidden";
     var timer = document.querySelector(".timer");
-    timer.innerHTML = "0 mins 15 secs";
+    timer.innerHTML = "0 mins 18 secs";
     clearInterval(interval);
       startTimer();
 
@@ -194,7 +194,7 @@ function enable(){
 
 
 // @description game timer
-var second = 15, minute = 0;
+var second = 18, minute = 0;
 var timer = document.querySelector(".timer");
 var timerover = document.querySelector(".overall");
 var secondover=0, minuteover=3;
@@ -301,7 +301,7 @@ if(clickedaibox==false){
   console.log('time left toselect AI=',second);
   x=0;
   if(bo===0){
-	
+	while (x<0){
 	  for (var i = 0; i < ran; i++){
     	rand=Math.floor(Math.random()*10)+1;
     	if( !(cards[rand].type===rightcard.type)){
@@ -311,6 +311,8 @@ if(clickedaibox==false){
     		}	
   		
   	}
+	  
+  }
 	}
   console.log('number boxes AI=', x);
  numaiboxes=x;

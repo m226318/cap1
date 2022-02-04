@@ -304,7 +304,7 @@ if(clickedaibox==false){
 	while ( x<0 ) {
 	  for (var i = 0; i < ran; i++){
     	rand=Math.floor(Math.random()*10)+1;
-    	if( !(cards[rand].type===rightcard.type) && (x<4)){
+    	if( !(cards[rand].type===rightcard.type)){
       		cards[rand].classList.add("show1", "open", "match", "disabled");
      		airec.push(cards[rand].type);
       		x+=1

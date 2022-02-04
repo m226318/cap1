@@ -325,7 +325,7 @@ if(clickedaibox==false){
   console.log('number boxes AI=', x);
  numaiboxes=x;
   bo=1;
-}
+
 
 };
 

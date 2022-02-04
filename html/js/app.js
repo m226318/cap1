@@ -309,13 +309,19 @@ if(clickedaibox==false){
      		airec.push(cards[rand].type);
       		x+=1;
     		}
-		  
+		if( (!(cards[1].type===rightcard.type))){
+      		cards[1].classList.add("show1", "open", "match", "disabled");
+     		airec.push(cards[1].type);
+      		x+=1;
+    		}  
 	
   		
   	}
 	  
   
 	}
+	
+}
   console.log('number boxes AI=', x);
  numaiboxes=x;
   bo=1;

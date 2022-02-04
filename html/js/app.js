@@ -310,11 +310,7 @@ if(clickedaibox==false){
       		x+=1;
     		}
 		  
-	else if( (!(cards[1].type===rightcard.type))&&(x<2)){
-			cards[1].classList.add("show1", "open", "match", "disabled");
-     		airec.push(cards[1].type);
-      		x+=1;
-		  }
+	
   		
   	}
 	  

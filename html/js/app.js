@@ -109,7 +109,7 @@ function startGame(){
     hour = 0;
     document.getElementById("answer").style.visibility = "hidden";
     var timer = document.querySelector(".timer");
-    timer.innerHTML = "0 mins 20 secs";
+    timer.innerHTML = "0 mins 15 secs";
     clearInterval(interval);
       startTimer();
 
@@ -243,12 +243,13 @@ function startTimer(){
         }
 	    if ( second <= 20-randbox && !boxflag){
 		    boxflag=true;
-        if ( (second%2)==0){
+		     rann=Math.floor(Math.random()*10)+1
+        if ( (rann%2)==0){
           
           document.getElementById("shape").style.backgroundColor="blue";
           document.getElementById("shape").style.visibility = "visible";
         }
-	if((second%2)!=0 ){
+	if((rann%2)!=0 ){
     document.getElementById("shape").style.backgroundColor="gold";
 		document.getElementById("shape").style.visibility="visible";
 	}
@@ -350,7 +351,13 @@ xml.onreadystatechange = function() {
         console.log( xml.responseText );
     }
 };
-
+  for (var i = 0; i < cards.length; i++){
+        deck.innerHTML = "";
+        [].forEach.call(cards, function(item) {
+            deck.appendChild(item);
+        });
+        cards[i].classList.remove("show", "open", "match", "disabled", "show1");
+    }
 xml.open("POST", "https://aimemorygame.usna-cyber.org/game.php", false);
 xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 var conf = document.querySelector('input[name="fav_language"]:checked').value ;

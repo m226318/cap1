@@ -104,12 +104,12 @@ function startGame(){
 
 
     //reset timer
-    second = 18;
+    second = 15;
     minute = 0;
     hour = 0;
     document.getElementById("answer").style.visibility = "hidden";
     var timer = document.querySelector(".timer");
-    timer.innerHTML = "0 mins 18 secs";
+    timer.innerHTML = "0 mins 15 secs";
     clearInterval(interval);
       startTimer();
 
@@ -194,7 +194,7 @@ function enable(){
 
 
 // @description game timer
-var second = 18, minute = 0;
+var second = 15, minute = 0;
 var timer = document.querySelector(".timer");
 var timerover = document.querySelector(".overall");
 var secondover=0, minuteover=3;

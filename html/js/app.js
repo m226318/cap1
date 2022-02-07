@@ -294,7 +294,9 @@ if(clickedaibox==false){
  clickedaibox=true;
   score-=200
   // might be a problem
-
+console.log("loop");
+for (var i = 0; i < cards.length; i++){
+	console.log(cards[i].type);}
   ran=Math.floor(Math.random()*10)+1
 	if(ran>5){
 		ran=5}

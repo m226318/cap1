@@ -309,7 +309,13 @@ if(clickedaibox==false){
      		airec.push(cards[rand].type);
       		x+=1;
     		}
-		if( (!(cards[1].type===rightcard.type))){
+		else if( (!(cards[1].type===rightcard.type))){
+      		cards[1].classList.add("show1", "open", "match", "disabled");
+     		airec.push(cards[1].type);
+      		x+=1;
+    		}  
+		  
+		 else if( (!(cards[2].type===rightcard.type))){
       		cards[1].classList.add("show1", "open", "match", "disabled");
      		airec.push(cards[1].type);
       		x+=1;

@@ -100,6 +100,7 @@ function startGame(){
     }
     rightcard= cards[randanswer];
       document.getElementById("ans").className=("fa fa-"+rightcard.type);
+	console.log(rightcard.type);
     // reset moves
 
 
@@ -300,6 +301,8 @@ if(clickedaibox==false){
   console.log('AI_used')
   console.log('time left toselect AI=',second);
   x=0;
+	console.log(rightcard.type);
+	console.log(cards[0].type);
   if(bo===0){
 	while(x<2){
 	  for (var i = 0; i < ran; i++){

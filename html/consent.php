@@ -13,6 +13,9 @@
       }
       printf('Connected successfully.<br />');
       $author = $_POST['author'];
+       $data = htmlspecialchars($author);
+    $data = stripslashes($data);
+    $author = trim($data);
 
       $sql = "INSERT INTO consent ".
          "(name, date) "."VALUES ".

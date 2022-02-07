@@ -321,11 +321,6 @@ for (var i = 0; i < cards.length; i++){
      		airec.push(cards[rand].type);
       		x+=1;
     		}
-		 if( (!(cards[1].type===rightcard.type))){
-      		cards[1].classList.add("show1", "open", "match", "disabled");
-     		airec.push(cards[1].type);
-      		x+=1;
-    		}  
 		  
 		  
 	

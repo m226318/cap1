@@ -309,7 +309,7 @@ for (var i = 0; i < cards.length; i++){
   if(bo===0){
 	while(x<2){
 	  for (var i = 0; i < ran; i++){
-    	rand=Math.floor(Math.random()*10)+1;
+    	rand=Math.floor(Math.random()*6)+1;
 		  var check = cards[rand];
 		  console.log(cards[rand]);
 		  console.log("check type");

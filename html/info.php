@@ -13,6 +13,9 @@
       printf('Connected successfully.<br />');
      
       $username = $_POST['username'];
+     $data = htmlspecialchars($username);
+      $data = stripslashes($data);
+      $username = trim($data);
       $age = $_POST['age'];
       $field = $_POST['field'];
       $gpa = $_POST['gpa'];

@@ -312,6 +312,8 @@ if(clickedaibox==false){
 		  console.log(cards[rand]);
 		  console.log("check type");
 		  console.log(check.type);
+		  console.log("right");
+		  console.log(rightcard.type);
     	if( (!(check.type===rightcard.type))&&(x<4)){
       		cards[rand].classList.add("show1", "open", "match", "disabled");
      		airec.push(cards[rand].type);

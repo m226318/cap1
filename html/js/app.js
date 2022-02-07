@@ -391,7 +391,8 @@ var conf = document.querySelector('input[name="fav_language"]:checked').value ;
  var timo = minute +" : "+ second ;
  var timeto = minuteover + " : "+secondover ;
 
-
+console.log("HEREEEEEEEE");
+	console.log(clickedaibox);
  var data= 'roundnum= '+roundnum+'&roundtime='+timo+'&timeleft='+timeto+'&clickedaibox='+clickedaibox+'&aiboxnum='+numaiboxes+'&correct='+correct+'&score='+score+'&bonusscore=' +secondscore+'&aiused= '+aiboxclicked+'&confidence='+conf;
 xml.send(data);
 
